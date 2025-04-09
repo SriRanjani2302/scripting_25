@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h2 id="title">Hello</h2>
+    <p class="info">First</p>
+    <p class="info">Second</p>
+    <p class="text">Paragraph 1</p>
+  <p class="text">Paragraph 2</p>
+  <p id="p1">Hello World</p>
+  <p id="p2">WELCOME</p>
+  <p>Event Listener works on the document. Click and check!</p>
+  <div id="container"></div>
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <button id="submitBtn">Submit</button>
+  <p id="result"></p>
+  <body onload="alert('Page Loaded')">
+
+    <h2>Mouse Events</h2>
+    <button onclick="document.getElementById('clickMsg').innerText='Clicked'">Click Me</button>
+    <p id="clickMsg"></p>
+  
+    <p ondblclick="this.style.color='red'">Double Click Me</p>
+  
+    <p onmouseover="this.innerText='Mouse Over'" onmouseout="this.innerText='Hover Here'">Hover Here</p>
+  
+    <hr>
+  
+    <h2>Keyboard Events</h2>
+    <input placeholder="Type something" onkeydown="document.getElementById('keyMsg').innerText='Key Down'" onkeyup="document.getElementById('keyMsg').innerText='Key Up'">
+    <p id="keyMsg"></p>
+  
+    <hr>
+  
+    <h2>Form Events</h2>
+    <form onsubmit="alert('Form Submitted'); return false;">
+      <input onchange="document.getElementById('changeMsg').innerText='Input Changed'" placeholder="Change me">
+      <br><br>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="changeMsg"></p>
+  
+    <hr>
+  
+    <h2>Focus and Blur</h2>
+    <input onfocus="this.style.background='lightblue'" onblur="this.style.background='white'" placeholder="Focus here">
+  
+    <script>
+       let title = document.getElementById("title");
+       title.innerText = "Welcome to DOM";
+       let elements = document.getElementsByClassName("info");
+    document.write("Class Selector: " + elements[0].innerText);
+     
+    let parag = document.querySelector(".text");
+    document.write("querySelector: " + parag.innerText);
+    
+    let parag2 = document.createElement("p");
+    para.innerText = "Hello World";
+    document.getElementById("container").appendChild(parag2);
+
+    document.getElementById("p2").style.color= "blue";
+    document.getElementById("p1").style.fontFamily= "Arial";
+
+    function greetUser() {
+      let name = document.getElementById("nameInput").value;
+      document.getElementById("result").innerText = "Hello " + name;
+    }
+
+    document.getElementById("submitBtn").addEventListener("click", greetUser);
+
+    document.addEventListener("click", function(){
+        document.body.style.backgroundColor = "red";
+    })
+
+
+
+
+
+    </script>
+</body>
+</html>
